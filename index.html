@@ -20,7 +20,7 @@
             </div>
             <div class="navbar-center">
                 <ul>
-                    <li><a href="" class="active-link"><img src="images/home.png"><span>Home</span></a></li>
+                    <li><a href="index.html" class="active-link"><img src="images/home.png"><span>Home</span></a></li>
                     <li><a href=""><img src="images/network.png"><span>My Network</span></a></li>
                     <li><a href=""><img src="images/jobs.png"><span>Jobs</span></a></li>
                     <li><a href=""><img src="images/message.png"><span>Messaging</span></a></li>
@@ -40,7 +40,7 @@
                         <img src="images/user-1.png">
                         <div>
                             <h3>Rayan Walton</h3>
-                            <a href="">See your profile</a>
+                            <a href="profile.html">See your profile</a>
                         </div>
                     </div>
                     <hr>
@@ -99,7 +99,7 @@
                     </div>
                 </div>
 
-                <div class="sidebar-activity">
+                <div class="sidebar-activity" id="sidebarActivity">
                     <h3>RECENT</h3>
                     <a href=""><img src="images/recent.png"> Web Development</a>
                     <a href=""><img src="images/recent.png"> User Interface</a>
@@ -120,6 +120,7 @@
                         <a href="">Discover more</a>
                     </div>
                 </div>
+                <p id="showMoreLink" onclick="toggleActivity()">Show more <b>+</b></p>
             </div>
         <!---------------- main-content --------------------->
             <div class="main-content">
@@ -370,7 +371,6 @@
 
 
 
-
         <script>
 
             let profileMenu = document.getElementById("profileMenu");
@@ -378,6 +378,22 @@
             function toggleMenu() {
                 profileMenu.classList.toggle("open-menu");
             }
+
+            let sidebarActivity = document.getElementById("sidebarActivity");
+            let showMoreLink = document.getElementById("showMoreLink");
+
+            function toggleActivity() {
+                sidebarActivity.classList.toggle("open-activity");
+
+                if(sidebarActivity.classList.contains("open-activity")) {
+                    showMoreLink.innerHTML = "Show less <b>-</b>";
+                }
+                else {
+                    showMoreLink.innerHTML = "Show more <b>+</b>";
+                }
+            }
+
+
 
         </script>
     </body>
